@@ -1,9 +1,9 @@
 'use strict';
 
 const assert = require('assert');
-const verifyUser = require('../../../../src/services/message/hooks/verifyUser.js');
+const gravatar = require('../../../../src/services/user/hooks/gravatar.js');
 
-describe('message verifyUser hook', () => {
+describe('user gravatar hook', () => {
   it('hook can be used', () => {
     const mockHook = {
       type: 'before',
@@ -13,8 +13,8 @@ describe('message verifyUser hook', () => {
       data: {}
     };
     
-    verifyUser()(mockHook);
+    gravatar()(mockHook);
     
-    assert.ok(mockHook.verifyUser);
+    assert.ok(mockHook.gravatar);
   });
 });

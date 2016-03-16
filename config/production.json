@@ -1,5 +1,5 @@
 {
-  "host": "message-app.feathersjs.com",
+  "host": "feathers-chat-app.feathersjs.com",
   "port": 80,
   "nedb": "NEDB_BASE_PATH",
   "public": "../public/",

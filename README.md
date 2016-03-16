@@ -1,6 +1,6 @@
-# message
+# feathers-chat
 
-> real-time experiment
+> A real-time chat application
 
 ## About
 
@@ -14,7 +14,7 @@ Getting up and running is as easy as 1, 2, 3.
 2. Install your dependencies
     
     ```
-    cd path/to/message; npm install
+    cd path/to/feathers-chat; npm install
     ```
 
 3. Start your app

@@ -1,7 +1,9 @@
 'use strict';
 
+const gravatar = require('./gravatar');
+
 const globalHooks = require('../../../hooks');
-const createUser = require('./logCreateUser');
+const hooks = require('feathers-hooks');
 const auth = require('feathers-authentication').hooks;
 
 exports.before = {
@@ -16,10 +18,7 @@ exports.before = {
     auth.populateUser(),
     auth.requireAuth()
   ],
-  create: [
-    createUser(),
-    auth.hashPassword()
-  ],
+  create: [auth.hashPassword(), gravatar()],
   update: [
     auth.verifyToken(),
     auth.populateUser(),
@@ -38,7 +37,7 @@ exports.before = {
 };
 
 exports.after = {
-  all: [],
+  all: [hooks.remove('password')],
   find: [],
   get: [],
   create: [],

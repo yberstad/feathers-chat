@@ -1,9 +1,9 @@
 'use strict';
 
 const assert = require('assert');
-const addUser = require('../../../../src/services/message/hooks/addUser.js');
+const process = require('../../../../src/services/message/hooks/process.js');
 
-describe('message addUser hook', () => {
+describe('message process hook', () => {
   it('hook can be used', () => {
     const mockHook = {
       type: 'before',
@@ -13,8 +13,8 @@ describe('message addUser hook', () => {
       data: {}
     };
     
-    addUser()(mockHook);
+    process()(mockHook);
     
-    assert.ok(mockHook.addUser);
+    assert.ok(mockHook.process);
   });
 });
